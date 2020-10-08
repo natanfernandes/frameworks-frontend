@@ -14,7 +14,7 @@ O projeto About my name é uma aplicação que permitirá o usuário a ter uma i
 * [Natanael Fernandes](https://github.com/natanfernandes)
 * [Maria Rayane](https://github.com/mrayanealves)
 
-### Telas
+### Telas ( Protótipos)
 ![Screenshot](images/1.png)
 ![Screenshot](images/2.png)
 ![Screenshot](images/3.png)
