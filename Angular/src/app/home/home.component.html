@@ -1,0 +1,6 @@
+<div class="container">
+  <h2 class="header">Digite um nome</h2>
+  <custom-input label="Nome" placeholder="Ex: José" (change)="handleChangeName($event)"></custom-input>
+  <h1 class="header">Nome Digitado: {{name}}</h1>
+  <custom-button label="BUSCAR" (press)="handleSearch()"></custom-button>
+</div>
