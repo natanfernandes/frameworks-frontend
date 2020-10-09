@@ -1,7 +1,6 @@
 import React from 'react'
-import Container from '@material-ui/core/Container'
 import FindName from './FindName'
-import { Typography } from '@material-ui/core';
+import { Container } from '@material-ui/core';
 
 const Sidebar = (props) => {
     return (

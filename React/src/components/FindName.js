@@ -21,7 +21,6 @@ const FindName = (props) => {
                             onChange={event => setName(event.target.value)} />
 
                 <br />
-
                 <Button className="Button" variant="contained" color="primary" onClick={() => props.getName(name)}>
                     Buscar
                 </Button>
