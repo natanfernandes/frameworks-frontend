@@ -1,0 +1,31 @@
+.Navbar {
+  background-color: rgba(0, 0, 0, 0.7) !important;
+}
+
+.ContainerSidebar {
+  max-width: unset !important;
+  height: 30em;
+  margin: 0 !important;
+  background-image: url('./book-2592729_1920.jpg');
+  background-position: center;  
+  opacity: 0.5;
+  position: absolute;
+}
+
+.Find {
+  margin-top: 10em;
+  align-items: center;
+  position: absolute;
+  color: white;
+}
+
+.Button {
+  margin-top: 1em !important;
+  padding: 1em !important;
+  width: 15em;
+}
+
+.TextField{
+  margin-top: 1em !important;
+  width: 50em;
+}
