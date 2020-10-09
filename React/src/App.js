@@ -1,15 +1,13 @@
 import React from 'react';
 import './App.css'
-import Navbar from './components/Navbar'
-import Sidebar from './components/Sidebar'
-import Find from './components/Find'
+import Header from './components/Header'
+import Ranking from './components/Ranking'
 
 function App() {
   return (
     <div className="App">
-      <Navbar />
-      <Sidebar />
-      <Find />
+      <Header />
+      <Ranking />
     </div>
   );
 }

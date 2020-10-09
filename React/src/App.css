@@ -8,14 +8,11 @@
   margin: 0 !important;
   background-image: url('./book-2592729_1920.jpg');
   background-position: center;  
-  opacity: 0.5;
-  position: absolute;
 }
 
 .Find {
-  margin-top: 10em;
+  padding: 10em;
   align-items: center;
-  position: absolute;
   color: white;
 }
 
@@ -28,4 +25,8 @@
 .TextField{
   margin-top: 1em !important;
   width: 50em;
+}
+
+.MuiInputBase-root {
+  color: white !important;
 }
