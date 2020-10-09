@@ -1,8 +1,5 @@
 import React, {useState} from 'react'
-import Container from '@material-ui/core/Container'
-import Typography from '@material-ui/core/Typography'
-import TextField from '@material-ui/core/TextField'
-import Button from '@material-ui/core/Button'
+import {Container, Typography, TextField, Button} from '@material-ui/core'
 
 const FindName = (props) => {
     const [name, setName] = useState('');
