@@ -1,0 +1,36 @@
+.Navbar {
+  background-color: rgba(0, 0, 0, 0.7) !important;;
+}
+
+.Breadcrumbs{
+  color: white !important;
+}
+
+.ContainerSidebar {
+  max-width: unset !important;
+  height: 30em;
+  margin: 0 !important;
+  background-image: url('./book-2592729_1920.jpg');
+  background-position: center;  
+}
+
+.Find {
+  padding: 10em;
+  align-items: center;
+  color: white;
+}
+
+.Button {
+  margin-top: 1em !important;
+  padding: 1em !important;
+  width: 15em;
+}
+
+.TextField{
+  margin-top: 1em !important;
+  width: 50em;
+}
+
+.MuiInputBase-root {
+  color: white !important;
+}
