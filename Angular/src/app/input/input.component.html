@@ -1,6 +1,8 @@
-<form class="form" >
-  <mat-form-field class="full-width" >
+<form class="form">
+  <mat-form-field class="full-width">
     <mat-label>{{label}}</mat-label>
-    <input matInput placeholder="{{placeholder}}">
+    <input [formControl]="insertedName" type="text" matInput placeholder="{{placeholder}}"
+      required="{{isRequired}}" minlength="{{minlength}}">
   </mat-form-field>
+  <mat-error *ngIf="insertedName.invalid">{{getErrorMessage()}}</mat-error>
 </form>
