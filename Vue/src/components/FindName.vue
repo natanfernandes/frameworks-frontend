@@ -1,7 +1,10 @@
 <template>
     <v-app>
         <v-container class="container-img">
-            <Form/>
+            <h1>{{ fromChild }}</h1>
+            <Form :title="title" 
+            :description="description"
+            />
         </v-container>
     </v-app>
 </template>
@@ -10,14 +13,11 @@
     import Form from './Form';
 
     export default {
-        name: "App",
+        name: "FindName",
+        props: ['title', 'description', 'fromChild'],
         components: {
             Form,
-        }, 
-        data(){
-            return {
-            }
-        },
+        }
     };
 </script>
 

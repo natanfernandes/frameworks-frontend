@@ -1,8 +1,8 @@
 <template>
   <v-app>
     <v-main>
-      <Navbar/>
-      <FindName/>
+      <Navbar :appTitle="appTitle"/>
+      <FindName :title="title" :description="description"/>
     </v-main>
   </v-app>
 </template>
@@ -20,6 +20,9 @@ export default {
   },
 
   data: () => ({
+    appTitle: 'About my name',
+    title: 'About my name',
+    description: 'Informe seu nome e encontre as coisas mais legais sobre ele diretamente do site do IBGE'
   }),
 };
 </script>

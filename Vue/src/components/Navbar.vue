@@ -12,11 +12,7 @@
 
 <script>
     export default {
-        name: "App",
-        data(){
-            return {
-            appTitle: 'About my name'
-            }
-        },
+        name: "Navbar",
+        props: ['appTitle']
     };
 </script>

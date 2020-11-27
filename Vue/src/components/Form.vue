@@ -5,6 +5,8 @@
             <form>
                 <v-text-field 
                     class="field"
+                    maxlength="25"
+                    outlined
                     autofocus
                 >
                 </v-text-field>
@@ -22,13 +24,8 @@
 
 <script>
     export default {
-        name: "App",
-        data(){
-            return {
-            title: 'About my name',
-            description: 'Informe seu nome e encontre as coisas mais legais sobre ele diretamente do site do IBGE'
-            }
-        },
+        name: "Form",
+        props: ['title', 'description']
     };
 </script>
 
