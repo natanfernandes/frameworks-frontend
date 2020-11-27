@@ -11,7 +11,7 @@ const NavBar = (props) => {
                             About my name
                         </Link>
                         <Link color="inherit" href="/getting-started/installation/">
-                            Nome selecionado
+                            Nome
                         </Link>
                         <Typography>{props.name}</Typography>
                     </Breadcrumbs>
