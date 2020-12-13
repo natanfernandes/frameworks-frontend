@@ -1,5 +1,5 @@
 import React from 'react'
-import {AppBar, Grid, Toolbar, Link} from '@material-ui/core'
+import { AppBar, Grid, Toolbar, Link } from '@material-ui/core'
 
 const NavBar = (props) => {
     return (
@@ -8,10 +8,10 @@ const NavBar = (props) => {
                 <Toolbar>
                     <Grid container spacing={3}>
                         <Grid item>
-                            <Link href="/">About my name {props.nome} </Link>
+                            <Link className="Link" href="/">About my name</Link>
                         </Grid>
                         <Grid item>
-                            <Link href="/">Pesquisar</Link>
+                            <Link className="Link" href="/pesquisar">Pesquisar</Link>
                         </Grid>
                     </Grid>
                 </Toolbar>
