@@ -1,36 +1,107 @@
 .Navbar {
-  background-color: rgba(0, 0, 0, 0.7) !important;;
+  background-color: rgba(240, 240, 240, 0.1) !important;
 }
 
 .Breadcrumbs{
   color: white !important;
 }
 
-.ContainerSidebar {
+.FeatureImage {
+  text-align: center;
   max-width: unset !important;
-  height: 30em;
+  height: 100%;
   margin: 0 !important;
   background-image: url('./book-2592729_1920.jpg');
-  background-position: center;  
-}
-
-.Find {
+  background-position: center;
   padding: 10em;
   align-items: center;
   color: white;
+  font-weight: bolder;
+  /* text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black; */
+  -webkit-box-shadow: 0 0.5em 1em 0 rgba(0,0,0,0.5);
+  box-shadow: 0 0.5em 1em 0 rgba(0,0,0,0.5);
 }
 
 .Button {
-  margin-top: 1em !important;
+  margin: 1.4em !important;
   padding: 1em !important;
   width: 15em;
 }
 
-.TextField{
+.TextField {
   margin-top: 1em !important;
   width: 50em;
 }
 
+.Form {
+  padding-top: 1.5em;
+}
+
 .MuiInputBase-root {
   color: white !important;
+}
+
+.ExpandMoreIcon {
+  padding-top: 4em;
+  position: fixed;
+  text-align: center;
+}
+
+.MuiIconButton-colorPrimary {
+  color: #f2f3f7 !important;
+}
+
+@-webkit-keyframes glowing {
+  0% { 
+    background-color: rgba(240, 240, 240, 0.1); 
+  }
+  50% { 
+    background-color: rgba(1, 1, 1, 1); 
+  }
+  100% { 
+    background-color: rgba(240, 240, 240, 0.1); 
+  }
+}
+
+@-moz-keyframes glowing {
+  0% { 
+    background-color: rgba(240, 240, 240, 0.1); 
+  }
+  50% { 
+    background-color: rgba(0, 0, 0, 0); 
+  }
+  100% { 
+    background-color: rgba(240, 240, 240, 0.1); 
+  }
+}
+
+@-o-keyframes glowing {
+  0% { 
+    background-color: rgba(240, 240, 240, 0.1); 
+  }
+  50% { 
+    background-color: rgba(0, 0, 0, 0); 
+  }
+  100% { 
+    background-color: rgba(240, 240, 240, 0.1); 
+  }
+}
+
+@keyframes glowing {
+  0% { 
+    background-color: rgba(240, 240, 240, 0.1); 
+  }
+  50% { 
+    background-color: rgba(0, 0, 0, 0); 
+  }
+  100% { 
+    background-color: rgba(240, 240, 240, 0.1); 
+  }
+}
+
+.MuiIconButton-root {
+  -webkit-animation: glowing 1500ms infinite;
+  -moz-animation: glowing 1500ms infinite;
+  -o-animation: glowing 1500ms infinite;
+  animation: glowing 1500ms infinite;
 }
