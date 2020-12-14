@@ -2,7 +2,6 @@ import React, { useState } from 'react'
 import { Container } from '@material-ui/core';
 import ContainerForm from './ContainerForm'
 import Results from './Results'
-import Teste from './Teste'
 
 
 const Search = (props) => {
@@ -19,7 +18,6 @@ const Search = (props) => {
                 getNome={getNome}
             />
             <Results nome={nome} />
-            {/* <Teste nome={nome} /> */}
         </Container>
     )
 }

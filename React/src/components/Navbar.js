@@ -8,7 +8,7 @@ const NavBar = (props) => {
                 <Toolbar>
                     <Grid container spacing={3}>
                         <Grid item>
-                            <Link className="Link" href="/">About my name</Link>
+                            <Link className="Link" href="/">Início</Link>
                         </Grid>
                         <Grid item>
                             <Link className="Link" href="/pesquisar">Pesquisar</Link>

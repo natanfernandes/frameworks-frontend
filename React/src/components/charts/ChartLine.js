@@ -8,7 +8,7 @@ import {
     Title,
   } from '@devexpress/dx-react-chart-material-ui';
   
-  import { ValueScale, Animation } from '@devexpress/dx-react-chart';
+  import { ValueScale } from '@devexpress/dx-react-chart';
 
 const ChartLine = (props) => {
     return (
@@ -30,7 +30,6 @@ const ChartLine = (props) => {
                     valueField={props.chart.valueField}
                     argumentField={props.chart.argumentField}
                 />
-                <Animation />
             </Chart>
         </Paper>
     )
