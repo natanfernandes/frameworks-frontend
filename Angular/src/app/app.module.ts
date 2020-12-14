@@ -7,7 +7,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MaterialModule } from './material/material.module';
 import {InputComponent} from './input/input.component';
 import { ButtonComponent } from './button/button.component'
-
+import { HttpClientModule } from '@angular/common/http';
+import { CommonModule } from "@angular/common";
 @NgModule({
   declarations: [
     AppComponent,
@@ -16,12 +17,14 @@ import { ButtonComponent } from './button/button.component'
     ButtonComponent,
   ],
   imports: [
+    CommonModule,
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     MaterialModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpClientModule
   ],
   bootstrap: [AppComponent]
 })

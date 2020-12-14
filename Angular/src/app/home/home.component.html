@@ -4,4 +4,10 @@
   minlength="3"></custom-input>
   <h1 class="header">Nome Digitado: {{name}}</h1>
   <custom-button label="BUSCAR" (press)="handleSearch()" isDisabled="{{isBtnDisabled}}"></custom-button>
+  <div *ngFor="let info of appService.userInfos;">
+    <p>
+      <b>Periodo: </b> {{ info.periodo }}
+      <b>Frequencia: </b> {{ info.frequencia }}
+    </p>
+  </div>
 </div>

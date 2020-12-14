@@ -1,0 +1,12 @@
+<div class="container">
+    <div>
+      <h2>Nomes femininos mais comuns: </h2>
+      <div *ngFor="let info of appService.ranking;">
+      <p>
+        <b>Nome: </b> {{ info.nome }}
+        <b>Frequencia: </b> {{ info.frequencia }}
+        <b>Rank: </b> {{ info.ranking }}
+      </p>
+      </div>
+    </div>
+  </div>
