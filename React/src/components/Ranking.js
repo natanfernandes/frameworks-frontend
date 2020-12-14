@@ -11,42 +11,44 @@ class Ranking extends React.Component {
 
         this.state = {
             title: props.title,
-            chart: {
-                title: "Comparativo de nomes por frequência: Top 10",
-                valueScale: "frequencia",
-                scaleName: "frequencia",
-                valueField: "frequencia",
-                argumentField: "nome"
-            },
-            chartPie: {
-                title: "Comparativo de nomes por frequência: Top 5",
-                valueScale: "frequencia",
-                scaleName: "frequencia",
-                valueField: "frequencia",
-                argumentField: "nome"
-            },
             columns: [
                 { name: 'ranking', title: 'Ranking' },
                 { name: 'nome', title: 'Nome' },
                 { name: 'frequencia', title: 'Frequêcia' },
             ],
             rows: [],
-            pie: []
+            chartBar: {
+                title: "Top 10 nomes por frequência",
+                valueScale: "frequencia",
+                scaleName: "frequencia",
+                valueField: "frequencia",
+                argumentField: "nome"
+            },
+            dataBar: [],
+            chartPie: {
+                title: "Top 5 comparativo de nomes por frequência",
+                valueScale: "frequencia",
+                scaleName: "frequencia",
+                valueField: "frequencia",
+                argumentField: "nome"
+            },
+            dataPie: []
         }
     }
 
     componentDidMount() {
         axios.get(`https://servicodados.ibge.gov.br/api/v2/censos/nomes/ranking`)
           .then(res => {
-            var result = res.data[0].res.map(function(item){
+            var rows = res.data[0].res.map(function(item){
                 return item;
             })
 
-            const rows = result.slice(0, 11)
-            const pie = result.slice(0, 6)
+            const dataBar = rows.slice(0, 11)
+            const dataPie = rows.slice(0, 6)
 
             this.setState({ rows });
-            this.setState({ pie });
+            this.setState({ dataBar });
+            this.setState({ dataPie });
           })
       }
 
@@ -58,22 +60,22 @@ class Ranking extends React.Component {
                         {this.state.title}
                     </Typography>
                     <Grid container>
-                        <Grid item xs={12} sm={6}>
-                            <TableList 
-                                columns={this.state.columns} 
-                                rows={this.state.rows} 
+                        <Grid item xs={12} sm={12}>
+                            <ChartBar 
+                                data={this.state.dataBar} 
+                                chart={this.state.chartBar}
                             />
                         </Grid>
                         <Grid item xs={12} sm={6}>
                             <ChartPie
-                                data={this.state.pie} 
+                                data={this.state.dataPie} 
                                 chart={this.state.chartPie}
                             />
                         </Grid>
-                        <Grid item xs={12} sm={12}>
-                            <ChartBar 
-                                data={this.state.rows} 
-                                chart={this.state.chart}
+                        <Grid item xs={12} sm={6}>
+                            <TableList 
+                                columns={this.state.columns} 
+                                rows={this.state.rows} 
                             />
                         </Grid>
                     </Grid>

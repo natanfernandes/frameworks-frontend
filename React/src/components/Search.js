@@ -1,5 +1,8 @@
 import React, { useState } from 'react'
+import { Container } from '@material-ui/core';
 import ContainerForm from './ContainerForm'
+import Results from './Results'
+import Teste from './Teste'
 
 
 const Search = (props) => {
@@ -10,10 +13,14 @@ const Search = (props) => {
     }
 
     return (
-        <ContainerForm 
-            text="O que o IBGE diz sobre seu nome?"
-            getNome={getNome}
-        />
+        <Container>
+            <ContainerForm 
+                text="O que o IBGE diz sobre seu nome?"
+                getNome={getNome}
+            />
+            <Results nome={nome} />
+            {/* <Teste nome={nome} /> */}
+        </Container>
     )
 }
 

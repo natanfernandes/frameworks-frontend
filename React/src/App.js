@@ -17,7 +17,7 @@ function App(props) {
               title="About my name"
               text="As coisas mais legais sobre seu nome diretamente do site do IBGE."
             />
-            <Ranking title="Nomes mais comuns do Brasil" />
+            <Ranking title="Nomes mais comuns do Brasil segundo o IBGE" />
           </Route>
           <Route exact path={`/pesquisar`}>
             <Search />
