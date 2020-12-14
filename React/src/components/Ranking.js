@@ -1,47 +1,88 @@
-import * as React from 'react';
-import {
-  Chart,
-  BarSeries,
-  Title,
-  ArgumentAxis,
-  ValueAxis,
-} from '@devexpress/dx-react-chart-material-ui';
-import { Grid, Card, CardContent } from '@material-ui/core';
+import React from 'react'
+import axios from 'axios';
+import { Grid, Container, Typography, Slide } from '@material-ui/core';
+import TableList from './charts/TableList'
+import ChartBar from './charts/ChartBar'
+import ChartPie from './charts/ChartPie';
 
-export default class Ranking extends React.PureComponent {
-  constructor(props) {
-    super(props);
+class Ranking extends React.Component {
+    constructor(props) {
+        super(props)
 
-    this.state = {
-      data: props.data,
-    };
-  }
+        this.state = {
+            title: props.title,
+            columns: [
+                { name: 'ranking', title: 'Ranking' },
+                { name: 'nome', title: 'Nome' },
+                { name: 'frequencia', title: 'Frequêcia' },
+            ],
+            rows: [],
+            chartBar: {
+                title: "Top 10 nomes por frequência",
+                valueScale: "frequencia",
+                scaleName: "frequencia",
+                valueField: "frequencia",
+                argumentField: "nome"
+            },
+            dataBar: [],
+            chartPie: {
+                title: "Top 5 comparativo de nomes por frequência",
+                valueScale: "frequencia",
+                scaleName: "frequencia",
+                valueField: "frequencia",
+                argumentField: "nome"
+            },
+            dataPie: []
+        }
+    }
 
-  render() {
-    const { data: chartData } = this.state;
+    componentDidMount() {
+        axios.get(`https://servicodados.ibge.gov.br/api/v2/censos/nomes/ranking`)
+          .then(res => {
+            var rows = res.data[0].res.map(function(item){
+                return item;
+            })
 
-    return (
-      <div className="Ranking">
-        <Grid>
-          <Card>
-            <CardContent>
-              <Chart
-                data={chartData}
-              >
-                <ArgumentAxis />
-                <ValueAxis max={10} />
+            const dataBar = rows.slice(0, 11)
+            const dataPie = rows.slice(0, 6)
 
-                <BarSeries
-                  valueField="frequencia"
-                  argumentField="nome"
-                />
-                <Title text="Ranking: Nomes mais comuns no Brasil" />
-                {/* <Animation /> */}
-              </Chart>
-            </CardContent>
-          </Card>
-        </Grid>
-      </div>
-    );
-  }
+            this.setState({ rows });
+            this.setState({ dataBar });
+            this.setState({ dataPie });
+          })
+      }
+
+    render() {
+        return (
+            <Slide in={true} direction="up">
+                <Container className="ContainerBody">
+                    <Typography variant="h3">
+                        {this.state.title}
+                    </Typography>
+                    <Grid container>
+                        <Grid item xs={12} sm={12}>
+                            <ChartBar 
+                                data={this.state.dataBar} 
+                                chart={this.state.chartBar}
+                            />
+                        </Grid>
+                        <Grid item xs={12} sm={6}>
+                            <ChartPie
+                                data={this.state.dataPie} 
+                                chart={this.state.chartPie}
+                            />
+                        </Grid>
+                        <Grid item xs={12} sm={6}>
+                            <TableList 
+                                columns={this.state.columns} 
+                                rows={this.state.rows} 
+                            />
+                        </Grid>
+                    </Grid>
+                </Container>
+            </Slide>
+        ) 
+    }
 }
+
+export default Ranking;

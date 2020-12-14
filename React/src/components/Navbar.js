@@ -1,20 +1,19 @@
 import React from 'react'
-import {AppBar, Toolbar, Typography, Breadcrumbs, Link} from '@material-ui/core'
+import { AppBar, Grid, Toolbar, Link } from '@material-ui/core'
 
 const NavBar = (props) => {
     return (
         <div>
-            <AppBar position="fixed" className="Navbar">
+            <AppBar position="static" className="Navbar">
                 <Toolbar>
-                    <Breadcrumbs className="Breadcrumbs" aria-label="breadcrumb">
-                        <Link color="inherit" href="/">
-                            About my name
-                        </Link>
-                        <Link color="inherit" href="/getting-started/installation/">
-                            Nome
-                        </Link>
-                        <Typography>{props.name}</Typography>
-                    </Breadcrumbs>
+                    <Grid container spacing={3}>
+                        <Grid item>
+                            <Link className="Link" href="/">Início</Link>
+                        </Grid>
+                        <Grid item>
+                            <Link className="Link" href="/pesquisar">Pesquisar</Link>
+                        </Grid>
+                    </Grid>
                 </Toolbar>
             </AppBar>
         </div>
