@@ -8,6 +8,9 @@
                     maxlength="25"
                     outlined
                     autofocus
+                    :counter="30"
+                    :rules="nameRules"
+                    required
                 >
                 </v-text-field>
 
@@ -25,7 +28,27 @@
 <script>
     export default {
         name: "Form",
-        props: ['title', 'description']
+        props: ['title', 'description'],
+        data: () => ({
+            valid: true,
+            name: '',
+            nameRules: [
+                v => !!v || 'Nome é obrigatório',
+                v => (v && v.length <= 30) || 'Nome deve conter menos que 15 caracteres.',
+                v => (v && v.length >= 3) || 'Nome deve conter 3 ou mais caracteres.',
+            ],
+        }),
+        methods: {
+            validate () {
+                this.$refs.form.validate()
+            },
+            reset () {
+                this.$refs.form.reset()
+            },
+            resetValidation () {
+                this.$refs.form.resetValidation()
+            },
+        },
     };
 </script>
 
