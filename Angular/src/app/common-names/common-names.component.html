@@ -1,0 +1,20 @@
+<div class="container">
+    <div>
+      <h2>Nomes femininos mais comuns: </h2>
+      <div *ngFor="let info of appService.commonNamesF;">
+      <p>
+        <b>Nome: </b> {{ info.nome }}
+        <b>Frequencia: </b> {{ info.freq }}
+      </p>
+      </div>
+    </div>
+    <div>
+      <h2>Nomes masculinos mais comuns: </h2>
+      <div *ngFor="let info of appService.commonNamesM;">
+      <p>
+        <b>Nome: </b> {{ info.nome }}
+        <b>Frequencia: </b> {{ info.freq }}
+      </p>
+      </div>
+    </div>
+  </div>

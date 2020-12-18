@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-
+import { AppService } from '../app.service'
+import { HttpClient } from '@angular/common/http';
 @Component({
   selector: 'app-home',
   templateUrl:'./home.component.html',
@@ -8,14 +9,15 @@ import { Component, OnInit } from '@angular/core';
 export class HomeComponent implements OnInit {
   name = ""
   isBtnDisabled = true
-  constructor() { }
+  constructor(public appService: AppService, private http: HttpClient) {}
 
   ngOnInit(): void {
   }
 
   handleChangeName(event): void {
     this.name = event.target.value
-    console.log(this.name.length)
+    this.appService.addUser(this.name)
+    
     if(this.name.length >= 3){
       this.isBtnDisabled = false
     } else {
@@ -24,6 +26,8 @@ export class HomeComponent implements OnInit {
   }
 
   handleSearch(): void{
-    alert('Busca por :'+ this.name)
+    this.http.get<any>('https://servicodados.ibge.gov.br/api/v2/censos/nomes/'+this.name).subscribe(data => {
+      this.appService.setUserInfos(data[0].res);
+    })
   }
 }

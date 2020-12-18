@@ -1,0 +1,9 @@
+.container {
+  margin: 50px;
+  display:flex;
+  justify-content: space-between;
+}
+.header {
+  text-align: center;
+}
+
