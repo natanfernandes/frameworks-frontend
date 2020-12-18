@@ -10,6 +10,10 @@
             text: value
         });
     }
+
+  function validate() {
+
+  }
 </script>
 
 <style>
@@ -21,7 +25,6 @@
     flex-wrap: wrap;
     justify-content: center;
   }
-  
   .columns :global(.mdc-text-field) {
     width: 218px;
   }
@@ -29,6 +32,7 @@
 
 <div class="columns margins">
     <Textfield
+      required="true"
       bind:value={value}
       label={label}
       on:change={getName}
