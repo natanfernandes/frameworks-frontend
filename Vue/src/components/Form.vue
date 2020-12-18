@@ -1,28 +1,33 @@
 <template>
-    <v-container style="margin-left: 1em; margin-top: 3em;">
-            <h1> {{ title }} </h1>
-            <p> {{ description }} </p>
-            <form>
-                <v-text-field 
-                    class="field"
-                    maxlength="25"
-                    outlined
-                    autofocus
-                    :counter="30"
-                    :rules="nameRules"
-                    required
-                >
-                </v-text-field>
-
-                <v-btn
-                    color="primary"
-                    dark
-                    large
-                >
-                Buscar
-                </v-btn>
-            </form>
-        </v-container>
+    <v-container class="container">
+        <h1> {{ title }} </h1>
+        <p> {{ description }} </p>
+        <form>
+            <v-row>
+                <v-col>
+                    <v-text-field 
+                        class="field"
+                        maxlength="25"
+                        outlined
+                        autofocus
+                        :counter="30"
+                        :rules="nameRules"
+                        required
+                    >
+                    </v-text-field>
+                </v-col>
+                <v-col>
+                    <v-btn
+                        color="primary"
+                        dark
+                        large
+                    >
+                    Buscar
+                    </v-btn>
+                </v-col>
+            </v-row>
+        </form>
+    </v-container>
 </template>
 
 <script>
@@ -53,19 +58,7 @@
 </script>
 
 <style>
-    h1 {
-        font-size: 4em;
-        color: white;
-        text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
-    }
-
-    p {
-        color: white;
-        text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
-    }
-
     .field {
-       margin-top: 1em !important;
-       width: 50em;
+       width: 100%;
     }
 </style>
