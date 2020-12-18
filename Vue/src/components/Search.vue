@@ -1,5 +1,7 @@
 <template>
-  <Form :title="this.title" :description="this.description"/>
+  <v-container class="container-form">
+    <Form :title="this.title" :description="this.description"/>
+  </v-container>
 </template>
 
 <script>
@@ -18,3 +20,11 @@ export default {
   }),
 };
 </script>
+
+<style>
+    .container-form {
+        max-width: unset !important;
+        height: 30em;
+        margin: 2em !important;
+    }
+</style>

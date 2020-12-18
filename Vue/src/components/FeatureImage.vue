@@ -1,19 +1,17 @@
 <template>
-    <v-app>
-        <v-container class="container-img">
-            <v-container class="container-text">
-                <h1 class="title-decor"> {{ title }} </h1>
-                <p class="par-decor"> {{ description }} </p>
-            </v-container>
+    <v-container class="container-img">
+        <v-container class="container-text">
+            <h1 class="title-decor"> {{ title }} </h1>
+            <p class="par-decor"> {{ description }} </p>
         </v-container>
-    </v-app>
+    </v-container>
 </template>
 
 <script>
 
     export default {
         name: "FeatureImage",
-        props: ['title', 'description', 'fromChild']
+        props: ['title', 'description']
     };
 </script>
 
